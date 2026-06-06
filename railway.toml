@@ -3,7 +3,7 @@ builder = "DOCKERFILE"
 dockerfilePath = "docker/Dockerfile"
 
 [deploy]
-startCommand = 'printf "NEXT_PRIVATE_SMTP_TRANSPORT=smtp-auth\nNEXT_PRIVATE_SMTP_HOST=smtp.resend.com\nNEXT_PRIVATE_SMTP_PORT=587\nNEXT_PRIVATE_SMTP_USERNAME=resend\nNEXT_PRIVATE_SMTP_PASSWORD=$NEXT_PRIVATE_SMTP_PASSWORD\nNEXT_PRIVATE_SMTP_FROM_NAME=Bitstream Service Hub\nNEXT_PRIVATE_SMTP_FROM_ADDRESS=noreply@notify.bitstream-service-hub.com\nNEXT_PRIVATE_SMTP_SECURE=false\n" > /app/.env.local && sh start.sh'
+startCommand = "sh start.sh"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"

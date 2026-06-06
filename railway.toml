@@ -1,7 +1,6 @@
 [build]
-builder = "DOCKER"
+builder = "DOCKERFILE"
 dockerfilePath = "docker/Dockerfile"
-buildArgs = { NEXT_PRIVATE_ENCRYPTION_KEY = "sjeU0Ovbv9WYxH96DXDbItdP7c2XYt~1", NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY = "ymAHbspt4.1m-tonxy6YH~2_a_cMJFI4" }
 
 [deploy]
 startCommand = "sh start.sh"

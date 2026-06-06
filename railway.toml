@@ -1,9 +1,10 @@
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "docker/Dockerfile"
+buildArgs = {}
 
 [deploy]
-startCommand = "sh start.sh"
+startCommand = "sh /app/apps/remix/start.sh"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"

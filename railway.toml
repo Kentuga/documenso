@@ -1,9 +1,10 @@
 [build]
-builder = "DOCKERFILE"
+builder = "DOCKER"
 dockerfilePath = "docker/Dockerfile"
+buildArgs = { NEXT_PRIVATE_ENCRYPTION_KEY = "oaq5EeJjcQgA4i39BR1VuSWXCTpwZDPs", NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY = "1WrpnalMs8DNh0tPbJK3ijC2QTczReyO" }
 
 [deploy]
-startCommand = "cd /app/packages/prisma && npx prisma migrate deploy && cd /app/apps/remix && node build/server/main.js"
+startCommand = "sh start.sh"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"

@@ -153,7 +153,5 @@ RUN npx prisma generate --schema ./packages/prisma/schema.prisma
 COPY --chown=nodejs:nodejs ./docker/start.sh /app/apps/remix/start.sh
 
 WORKDIR /app/apps/remix
-
-RUN printf "NEXT_PRIVATE_SMTP_TRANSPORT=smtp-auth\nNEXT_PRIVATE_SMTP_HOST=smtp.resend.com\nNEXT_PRIVATE_SMTP_PORT=587\nNEXT_PRIVATE_SMTP_USERNAME=resend\nNEXT_PRIVATE_SMTP_PASSWORD=re_MsVXXKnX_MZbg92j1MFqbUPBccGBcLmYg\nNEXT_PRIVATE_SMTP_SECURE=false\nNEXT_PRIVATE_SMTP_FROM_NAME=Bitstream Service Hub\nNEXT_PRIVATE_SMTP_FROM_ADDRESS=noreply@notify.bitstream-service-hub.com\n" > .env.local
 CMD ["sh", "start.sh"]
 
